@@ -1,6 +1,5 @@
 import './globals.css'
 import { Suspense } from 'react'
-import Script from 'next/script'
 import SiteRuntime from '@/components/SiteRuntime'
 import { SITE_URL } from '@/lib/site'
 
@@ -49,20 +48,6 @@ export default function RootLayout({ children }) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         {children}
-        {process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID ? (
-          <Script
-            id="hs-script-loader"
-            src={`https://js.hs-scripts.com/${process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID}.js`}
-            strategy="afterInteractive"
-          />
-        ) : null}
-        {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ? (
-          <Script
-            id="cf-turnstile-loader"
-            src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-            strategy="afterInteractive"
-          />
-        ) : null}
         <Suspense fallback={null}><SiteRuntime /></Suspense>
       </body>
     </html>

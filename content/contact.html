@@ -33,8 +33,9 @@
 <p class="muted" style="margin:22px 0 0;">Ontario, Canada<br/>Serving leaders and institutions globally.</p>
 <div class="badge-row"><span class="badge">Confidential</span><span class="badge">Founder-led</span><span class="badge">Selective intake</span></div>
 </aside>
-<form action="/api/contact" class="contact-form" data-contact-form="" data-reveal="" data-reveal-delay="1" method="POST" name="blue-corridor-contact" novalidate="">
-<p aria-hidden="true" style="display:none;"><label>Do not fill this out: <input autocomplete="off" name="bot-field" tabindex="-1"/></label></p>
+<form class="contact-form" data-netlify="true" data-reveal="" data-reveal-delay="1" method="POST" name="blue-corridor-contact" netlify-honeypot="bot-field">
+<input name="form-name" type="hidden" value="blue-corridor-contact"/>
+<p style="display:none;"><label>Do not fill this out: <input name="bot-field"/></label></p>
 <div class="field"><label for="name">Full name</label><input autocomplete="name" id="name" name="name" required="" type="text"/></div>
 <div class="field"><label for="email">Email</label><input autocomplete="email" id="email" name="email" required="" type="email"/></div>
 <div class="field"><label for="organization">Organization</label><input autocomplete="organization" id="organization" name="organization" type="text"/></div>
